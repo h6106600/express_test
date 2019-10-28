@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="/images/icon.png">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="javascripts/main.js"></script>
+    <style>
+      a{
+        color: white;
+      }
+      a:hover{
+        text-decoration: none;
+        color: yellow;
+      }
+    </style>
+  </head>
+  <body class="body">
+    <header class="container-fluid">
+      <h3 class="text-center"><%= title %></h3>
+    </header>
+
+    <nav class="container-fluid">
+      <div class="container">
+        <span><a href="/">首頁</a></span>
+        <% if(user){ %>
+        <span><a href="/logout">登出</a></span>
+        <span><a href="/userData">用戶資料</a></span>
+        <% }else{ %>
+        <span><a href="/login">登入</a></span>
+        <span><a href="/reg">註冊</a></span>
+        <% } %>
+      </div>
+    </nav>

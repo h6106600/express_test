@@ -1,0 +1,40 @@
+<%- include header %>
+  <div class="container">
+    <div class="col-md-offset-3 col-md-6">
+      <form action="/reg" method="post" class="form-group">
+        <h3>註冊:</h3>
+        <p><input type="text" name="name" placeholder="用戶名" maxlength="20" required id="name" class="form-control"></p>
+        <p><input type="password" name="password" placeholder="用戶密碼" maxlength="20" required id="password" class="form-control"></p>
+        <p><input type="email" name="email" placeholder="用戶信箱" maxlength="30" required class="form-control"></p>
+        <input type="submit" id="submit" class="btn btn-primary"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span id="div1"></span>
+
+      </form>
+    </div>
+  </div>
+    <script>
+      $(document).ready(function(){
+          if(("#name").val==null){
+            $("#div1").text('登入帳密');
+          };
+
+          $("#name").blur(function(){
+            $.post( "/check",{name: $("#name").val() })
+              .done(function(data) {
+                  $("#div1").text(data);
+                  if($("#name").val() == ''){
+                    $("#div1").text('登入帳密');
+                  }
+              });
+          });
+
+          $("#submit").click(function(e){
+            if($("#div1").text() == '用戶名已有人使用'){
+               e.preventDefault();
+            }
+          });
+
+      });
+    </script>
+    
+</body>
+</html>

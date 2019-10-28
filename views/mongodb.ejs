@@ -1,0 +1,53 @@
+<%- include header %>
+  <div class="container">
+    <section>
+      <div>
+          <p>mongodb安裝:</p>
+          <p>mongodb官網:https://www.mongodb.com/</p>
+
+          <p>mongodb操作:</p>
+          <p>先在bin資料夾創建db資料夾，在到裡面打開命令提示字元輸入mongod --dbpath ../db</p>
+
+          <p>之後再開另一個命令提示字元，輸入mongo，接著開始操作mongodb資料</p>
+
+          <p>操作指令:</p>
+          <p>show dbs(出現所有資料庫名)</p>
+
+          <p>show collections(出現所有集合)</p>
+
+          <p>可執行help來查看基本的操作說明</p>
+
+          <p>use mydb(使用use選擇或創建db)</p>
+
+          <p>db.user.insert({name:"luke",password:123456})輸入一筆資料</p>
+
+          <p>db.user.insertMany([{name:"luke",password:123456},{name:"lulu",password:111333}])增加多筆資料</p>
+
+          <p>db.user.save({name:"lulu",password:123123})輸入第二筆資料</p>
+
+          <p>db.user.find()找出所有資料</p>
+
+          <p>db.user.find().pretty()讓找出的資料排版清楚</p>
+
+          <p>db.user.find({score:{ $gt: 30 }})找出score值大於30的資料</p>
+
+          <p>db.user.find({score:{ $lt: 30 }})找出score值小於30的資料</p>
+
+          <p>如果只要改資料裡的一個值要使用$set，例如: db.user.update({name:"luke"},{$set:{name:"jim"}})</p>
+
+          <p>db.user.update({name:"luke"},{name:"jim"})修改資料name的值從luke改成jim</p>
+
+          <p>db.user.deleteOne({name:"lulu"})刪除一筆name值是lulu的資料</p>
+
+          <p>db.user.deleteMany({})刪除全部資料</p>
+
+          <p>db.user.drop()刪除集合</p>
+
+          <p>db.dropDatabase()刪除資料庫</p>
+
+          <p>db.user.find({name:"luke"}).toArray(function(err, result) { if (err) throw err; console.log(result); db.close(); }); 找出所有name的值是luke的資料</p>
+
+          <p>db.user.find().limit(5).toArray(function(err, result) { if (err) throw err; console.log(result); db.close(); }); 找出5筆資料</p>
+      </div>
+    </section>
+  </div>

@@ -1,0 +1,28 @@
+<%- include header %>
+  <div class="container">
+    <p>
+      <div>安裝redis</div>
+      <div>window下載redis</div>
+      <div>下載地址:<a href="https://github.com/MSOpenTech/redis/releases">https://github.com/MSOpenTech/redis/releases</a></div>
+      <div>下載Redis-x64-xxx.zip</div>
+      <div>進入資料夾開啟命令提示字元運行redis-server.exe redis.windows.conf</div>
+      <div>開啟另一個命令提示字元(原來的不要關)運行redis-cli.exe -h 127.0.0.1 -p 6379</div>
+      <div>設定鍵值 set myKey abc</div>
+      <div>取出鍵值 get myKey</div>
+      <div>cache.quit();//關閉連線</div>
+    </p>
+    <p>
+      <div>安裝套件 npm install redis --save</div>
+      <div>建立連線 </div>
+      <div>var host = '127.0.0.1';</div>
+      <div>var port = 6379;</div>
+      <div>var redis = require("redis"),cache = redis.createClient(port,host);</div>
+      <div>寫入資料</div>
+      <div>var data = {'id': 1,'name': 'luke'};</div>
+      <div>var key = data.id.toString();</div>
+      <div>cache.set(key, JSON.stringify(data));</div>
+      <div>讀取資料</div>
+      <div>cache.get('1', function(err, results) {console.log(results);});</div>
+      <div>cache.quit();//關閉連線</div>
+    </p>
+  </div>
