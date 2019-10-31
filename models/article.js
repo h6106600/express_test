@@ -1,6 +1,5 @@
 var MongoClient = require('mongodb').MongoClient;
-//var url = "mongodb://localhost:27017/mydb";
-var url = "mongodb://qqq610660:h123868622@ds145952.mlab.com:45952/qqq001";
+var url = "mongodb://localhost:27017/mydb";
 var collection = "article_content";
 
 var insert_article = function(name,content,date){
